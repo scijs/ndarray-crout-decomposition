@@ -1,5 +1,3 @@
-var zeros = require('zeros');
-
 module.exports = function (A, L, U) {
     var m = A.shape[0];
     var n = A.shape[1];
