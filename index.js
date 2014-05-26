@@ -8,22 +8,23 @@ module.exports = function (A, L, U) {
         U.set(i, i, 1);
     }
     
-    for (var i = 0; i < n; i++) {
-        for (var j = i; j < n; j++) {
+    for (var j = 0; j < n; j++) {
+        for (var i = j; i < n; i++) {
             var sum = 0;
-            for (var k = 0; k < i; k++) {
-                sum += L.get(k,j) * U.get(i,k);
+            for (var k = 0; k < j; k++) {
+                sum += L.get(k,i) * U.get(j,k);  
             }
-            L.set(j, i, A.get(j, i) - sum);
+            L.set(j, i, A.get(j,i) - sum);
         }
-        for (var j = i; j < n; j++) {
+         
+        for (var i = j; i < n; i++){
             var sum = 0;
-            for (var k = 0; k < i; k++) {
-                sum += L.get(k,i) * U.get(j,k);
+            for (var k = 0; k < j; k++){
+                sum += L.get(k,j) * U.get(i, k);
             }
-            var denom = L.get(i,i);
+            var denom = L.get(j,j);
             if (denom === 0) return undefined;
-            U.set(j, i, (A.get(j,i) - sum) / denom);
+            U.set(i, j, (A.get(i,j) - sum) / denom);
         }
     }
 };

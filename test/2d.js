@@ -9,8 +9,8 @@ test('2d', function (t) {
     var U = ndarray(dU, [ 2, 2 ]);
     var A = ndarray([ 4, 3, 6, 3 ], [ 2, 2 ]);
     
-    lu(L, U, A);
-    t.deepEqual(dL, [ 1, 0, 1.5, 1 ], 'L');
-    t.deepEqual(dU, [ 4, 3, 0, -1.5 ], 'U');
+    lu(A, L, U);
+    t.deepEqual(dU, [ 1, 0, 1.5, 1 ], 'U');
+    t.deepEqual(dL, [ 4, 3, 0, -1.5 ], 'L');
     t.end();
 });
