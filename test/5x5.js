@@ -3,6 +3,7 @@ var ndarray = require('ndarray');
 var zeros = require('zeros');
 var lu = require('../');
 var toA = require('./lib/toa.js');
+var round = require('./lib/round.js');
 
 // example problem data from
 // http://mathfaculty.fullerton.edu/mathews/n2003/cholesky/CholeskyMod/Links/CholeskyMod_lnk_3.html
@@ -36,7 +37,15 @@ var expected = {
 
 test('5x5', function (t) {
     t.ok(lu(A, L, U));
-    t.deepEqual(toA(U), expected.U, 'U');
-    t.deepEqual(toA(L), expected.L, 'L');
+    t.deepEqual(
+        round(toA(U), 13),
+        round(expected.U, 13),
+        'U'
+    );
+    t.deepEqual(
+        round(toA(L), 13),
+        round(expected.L, 13),
+        'L'
+    );
     t.end();
 });
