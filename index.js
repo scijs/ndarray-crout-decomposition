@@ -1,3 +1,5 @@
+var zeros = require('zeros');
+
 module.exports = function (A, L, U) {
     var m = A.shape[0];
     var n = A.shape[1];
@@ -27,4 +29,5 @@ module.exports = function (A, L, U) {
             U.set(i, j, (A.get(i,j) - sum) / denom);
         }
     }
+    return true;
 };
