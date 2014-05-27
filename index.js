@@ -1,7 +1,7 @@
 module.exports = function (A, L, U) {
     var m = A.shape[0];
     var n = A.shape[1];
-    if (m !== n) return undefined; // non-square
+    if (m !== n) return false; // non-square
     
     // diagonalize U
     for (var i = 0; i < n; i++) {
@@ -23,7 +23,7 @@ module.exports = function (A, L, U) {
                 sum += L.get(k,j) * U.get(i, k);
             }
             var denom = L.get(j,j);
-            if (denom === 0) return undefined;
+            if (denom === 0) return false;
             U.set(i, j, (A.get(i,j) - sum) / denom);
         }
     }
