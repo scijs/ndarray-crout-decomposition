@@ -1,0 +1,37 @@
+{
+  "name": "ndarray-crout-decomposition",
+  "version": "1.0.0",
+  "description": "LU decomposition using the crout algorithm",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^2.12.1",
+    "ndarray": "^1.0.14",
+    "zeros": "~0.0.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/ndarray-crout-decomposition.git"
+  },
+  "homepage": "https://github.com/substack/ndarray-crout-decomposition",
+  "keywords": [
+    "ndarray",
+    "crout",
+    "matrix",
+    "lu",
+    "decomposition",
+    "linalg",
+    "linear",
+    "algebra",
+    "math"
+  ],
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "license": "MIT"
+}
