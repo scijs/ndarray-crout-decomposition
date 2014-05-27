@@ -2,6 +2,10 @@
 
 LU decomposition using the crout algorithm
 
+[![testling badge](https://ci.testling.com/substack/ndarray-crout-decomposition.png)](https://ci.testling.com/substack/ndarray-crout-decomposition)
+
+[![build status](https://secure.travis-ci.org/substack/ndarray-crout-decomposition.png)](http://travis-ci.org/substack/ndarray-crout-decomposition)
+
 # example
 
 ``` js
