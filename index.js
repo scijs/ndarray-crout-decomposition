@@ -17,7 +17,7 @@ module.exports = function (A, L, U) {
             L.set(j, i, A.get(j,i) - sum);
         }
          
-        for (var i = j; i < n; i++){
+        for (var i = j+1; i < n; i++){
             var sum = 0;
             for (var k = 0; k < j; k++){
                 sum += L.get(k,j) * U.get(i, k);
