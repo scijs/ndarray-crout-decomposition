@@ -2,6 +2,7 @@ module.exports = function (A, L, U) {
     var m = A.shape[0];
     var n = A.shape[1];
     if (m !== n) return false; // non-square
+    if (L && !U) U = L;
     
     // diagonalize U
     for (var i = 0; i < n; i++) {
