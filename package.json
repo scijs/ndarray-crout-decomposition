@@ -1,6 +1,6 @@
 {
   "name": "ndarray-crout-decomposition",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "LU decomposition using the crout algorithm",
   "main": "index.js",
   "dependencies": {},
