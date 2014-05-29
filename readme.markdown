@@ -34,6 +34,29 @@ U=
    0.000    1.000
 ```
 
+or to save space, you can use a single matrix to store the L and U values:
+
+``` js
+var ndarray = require('ndarray');
+var zeros = require('zeros');
+var show = require('ndarray-show');
+var crout = require('ndarray-crout-decomposition');
+
+var A = ndarray([ 4, 3, 6, 3 ], [ 2, 2 ]);
+var LU = zeros([ 2, 2 ]);
+
+crout(A, LU);
+console.log('LU=\n' + show(LU));
+```
+
+output:
+
+```
+LU=
+   4.000    1.500
+   3.000   -1.500
+```
+
 # methods
 
 ``` js
@@ -44,7 +67,10 @@ var crout = require('ndarray-crout-decomposition')
 
 Decompose the matrix `A` into `L` and `U`, mutating `L` and `U` in-place.
 
-`A` is not unmodified.
+`A` is not modified.
+
+If you don't pass in a `U` matrix, `L` will be used to store both the `L` and
+`U` values, omitting the diagonal of ones from `U` to make room.
 
 If `A` was non-square or the algorithm could not find a solution, `ok` is
 `false`. Otherwise `ok` is `true`.
